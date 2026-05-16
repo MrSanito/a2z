@@ -430,7 +430,7 @@ function Modal({ item, onClose }: { item: ExItem; onClose: () => void }) {
                   return (
                     <div key={i} className="flex gap-3">
                       <div className="flex flex-col items-center mt-1">
-                        <div className="w-2.5 h-2.5 rounded-full shrink-0 border-2 border-white ring-1" style={{ background: dotC, ringColor: dotC }} />
+                        <div className="w-2.5 h-2.5 rounded-full shrink-0 border-2 border-white ring-1" style={{ background: dotC, boxShadow: `0 0 0 1px ${dotC}` }} />
                         {!isLast && <div className="w-px flex-1 bg-slate-100 my-1" style={{ minHeight: "20px" }} />}
                       </div>
                       <div className="pb-4">
@@ -913,7 +913,7 @@ export default function PackSecureDashboard() {
                   </Pie>
                   <Tooltip
                     contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e2e8f0", boxShadow: "0 4px 6px -1px rgba(0,0,0,.1)" }}
-                    formatter={(v: number, n: string) => [`${v} (${PIE_DATA.find((p) => p.name === n)?.pct})`, n]}
+                    formatter={(v: any, n: any) => [`${v} (${PIE_DATA.find((p) => p.name === n)?.pct})`, n]}
                   />
                 </PieChart>
               </ResponsiveContainer>
